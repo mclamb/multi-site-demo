@@ -24,7 +24,7 @@ usage() {
                              $BASE VersionSet, if there is an
                              additional option to 'prep-manager', that
                              will be used in place of '$BASE'
-          -b site-base-VER   Sets the VER (eg 'v4.2.1') for site-base
+          -b site-base-VER   Sets the VER (eg 'v4.2.2') for site-base
                              implies/sets '-p' if not specified
           -c cluster_prefix  sets cluster members with a prefix name for
                              uniqueness
@@ -110,7 +110,7 @@ set -e
 #            that can be set for the terraform provider (linode)
 ###
 PREP="false"
-BASE="site-base-v4.2.1"           # "stable" is not fully available in the catalog
+BASE="site-base-v4.2.2"           # "stable" is not fully available in the catalog
 OPTS=""
 MGR_LBL="global-manager"
 MGR_PWD="r0cketsk8ts"
@@ -271,10 +271,10 @@ if [[ -f static-catalog.zip ]] ; then
   _drpcli files upload static-catalog.zip >/dev/null
 fi
 # XXX: When moved into static-catalog.zip, then remove
-if [[ ! -f v4.2.1.zip ]] ; then
-  curl -s -o v4.2.1.zip https://rebar-catalog.s3-us-west-2.amazonaws.com/drp/v4.2.1.zip
+if [[ ! -f v4.2.2.zip ]] ; then
+  curl -s -o v4.2.2.zip https://rebar-catalog.s3-us-west-2.amazonaws.com/drp/v4.2.2.zip
 fi
-_drpcli files upload v4.2.1.zip to "rebar-catalog/drp/v4.2.1.zip"
+_drpcli files upload v4.2.2.zip to "rebar-catalog/drp/v4.2.2.zip"
 # XXX: When moved into static-catalog.zip, then remove
 
 echo "Start the manager workflow"
